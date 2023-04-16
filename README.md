@@ -1,10 +1,10 @@
-# Neutrino: Privacy-Preserving Bitcoin Light Client
+# Neutrino: Privacy-Preserving Litecoin Light Client
 
 [![Build Status](https://travis-ci.org/ltcsuite/neutrino.svg?branch=master)](https://travis-ci.org/ltcsuite/neutrino)
 [![Godoc](https://godoc.org/github.com/ltcsuite/neutrino?status.svg)](https://godoc.org/github.com/ltcsuite/neutrino)
 [![Coverage Status](https://coveralls.io/repos/github/ltcsuite/neutrino/badge.svg?branch=master)](https://coveralls.io/github/ltcsuite/neutrino?branch=master)
 
-Neutrino is an **experimental** Bitcoin light client written in Go and designed with mobile Lightning Network clients in mind. It uses a [new proposal](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-June/014474.html) for compact block filters to minimize bandwidth and storage use on the client side, while attempting to preserve privacy and minimize processor load on full nodes serving light clients.
+Neutrino is an **experimental** Litecoin light client written in Go and designed with mobile Lightning Network clients in mind. It uses a [new proposal](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-June/014474.html) for compact block filters to minimize bandwidth and storage use on the client side, while attempting to preserve privacy and minimize processor load on full nodes serving light clients.
 
 ## Mechanism of operation
 The light client synchronizes only block headers and a chain of compact block filter headers specifying the correct filters for each block. Filters are loaded lazily and stored in the database upon request; blocks are loaded lazily and not saved. There are multiple [known major issues](https://github.com/ltcsuite/neutrino/issues) with the client, so it is **not recommended** to use it with real money at this point.
